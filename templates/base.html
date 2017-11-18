@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurantpp</title>
+</head>
+<body>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'restaurants:list' %}">Lista de Resturantes</a>
+    <a href="{% url 'restaurants:new' %}">Agregar restaurante</a>
+    {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">Cerrar sesion</a>
+    {% else %}
+        <a href="{% url 'login' %}">Iniciar sesion</a>
+        <a href="{% url 'register' %}">Registrarse</a>
+    {% endif %}
+
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

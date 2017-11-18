@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ restaurant.name }}</h1>
+    <p>Abre a las: {{ restaurant.is_open }}</p>
+    <p>Cierra a las: {{ restaurant.is_closed }}</p>
+    <p>Propietario: {{ restaurant.owner }}</p>
+
+    <a href="{% url 'restaurants:edit' restaurant.id  %}"><button>Editar</button></a>
+    <a href="{% url 'restaurants:delete' restaurant.id %}"><button>Eliminar</button></a>
+{% endblock content %}
