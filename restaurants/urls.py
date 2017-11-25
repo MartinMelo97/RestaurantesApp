@@ -21,6 +21,8 @@ from django.contrib.auth import views as auth_views
 from accounts import urls as accountsUrls
 from accounts.views import RegisterUserView
 from platillos import urls as platillosUrls
+from rest_framework import routers
+from restaurantesapp.views import RestaurantsViewset
 
 class HomeView(TemplateView):
     template_name = 'home.html'
@@ -37,3 +39,8 @@ urlpatterns = [
     url(r'^register/$', RegisterUserView.as_view(), name="register"),
     url(r'^platillos/', include(platillosUrls, namespace="platillos")),
 ]
+
+router = routers.DefaultRouter()
+router.register(r'restaurantsapi', RestaurantsViewset)
+
+urlpatterns += router.urls

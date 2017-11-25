@@ -5,7 +5,10 @@ from .forms import RestaurantForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.db.models import Q
+from rest_framework import viewsets
+from .serializers import RestaurantSerializer
 # Create your views here.
+
 
 
 class RestaurantsListView(View):
@@ -87,3 +90,11 @@ class RestaurantDeleteView(View):
         restaurant.delete()
 
         return redirect('restaurants:list')
+
+#Para la API
+
+
+class RestaurantsViewset(viewsets.ModelViewSet):
+
+    queryset = RestaurantModel.objects.all()
+    serializer_class = RestaurantSerializer
