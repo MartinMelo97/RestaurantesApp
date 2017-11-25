@@ -6,6 +6,12 @@
     <p>Cierra a las: {{ restaurant.is_closed }}</p>
     <p>Propietario: {{ restaurant.owner }}</p>
 
+    <h3>PLatillos</h3>
+    {% for platillo in restaurant.platillos.all %}
+        <p>{{ platillo.nombre }}</p>
+    {% endfor %}
+
+
     <a href="{% url 'restaurants:edit' restaurant.id  %}"><button>Editar</button></a>
     <a href="{% url 'restaurants:delete' restaurant.id %}"><button>Eliminar</button></a>
 {% endblock content %}

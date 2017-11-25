@@ -20,6 +20,7 @@ from django.views.generic.base import TemplateView
 from django.contrib.auth import views as auth_views
 from accounts import urls as accountsUrls
 from accounts.views import RegisterUserView
+from platillos import urls as platillosUrls
 
 class HomeView(TemplateView):
     template_name = 'home.html'
@@ -34,4 +35,5 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name="logout"),
     url(r'^accounts/', include(accountsUrls, namespace="accounts")),
     url(r'^register/$', RegisterUserView.as_view(), name="register"),
+    url(r'^platillos/', include(platillosUrls, namespace="platillos")),
 ]

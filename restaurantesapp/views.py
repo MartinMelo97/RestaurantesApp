@@ -4,14 +4,24 @@ from .models import RestaurantModel
 from .forms import RestaurantForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.db.models import Q
 # Create your views here.
 
 
 class RestaurantsListView(View):
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
+
+        q = request.GET.get('q')
         template_name = "restaurantsapp/lista.html"
         restaurants = RestaurantModel.objects.all()
+        if q:
+            restaurants = RestaurantModel.objects.filter(
+                Q(name__contains=q)|
+                Q(owner__username__contains=q)|
+                Q(platillos__nombre__contains=q)
+            ).distinct()
+        print(restaurants)
         context = {'restaurants':restaurants}
 
         return render(request, template_name, context)
