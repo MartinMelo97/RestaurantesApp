@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="acbe6308-7bda-491d-8e5e-0c9b0e03d91a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restaurantesapp/views.py" afterPath="$PROJECT_DIR$/restaurantesapp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restaurants/settings.py" afterPath="$PROJECT_DIR$/restaurants/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restaurants/urls.py" afterPath="$PROJECT_DIR$/restaurants/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/restaurants/wsgi.py" afterPath="$PROJECT_DIR$/restaurants/wsgi.py" />
-    </list>
+    <list default="true" id="acbe6308-7bda-491d-8e5e-0c9b0e03d91a" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
